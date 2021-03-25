@@ -7,25 +7,27 @@
     {% for anuncio in anuncios %}
     <div class="column">
         <div class="card">
-            <div class="ui fluid card">
-                <div class="image">
-                    <img src="{% static 'anuncio/img/vazio.jpg' %}">
-                </div>
-                <div class="content">
-                    <a class="header">{{anuncio.titulo}}</a>
-                    <div class="meta">
-                        <span class="date">{{anuncio.postado_em}}</span>
+            <a href="{% url 'anuncio' anuncio.id %}">
+                <div class="ui fluid card">
+                    <div class="image">
+                        <img src="{% static 'anuncio/img/vazio.jpg' %}">
+                    </div>
+                    <div class="content">
+                        <a href="{% url 'anuncio' anuncio.id %}" class="header">{{anuncio.titulo}}</a>
+                        <div class="meta">
+                            <span class="date">{{anuncio.postado_em}}</span>
+                        </div>
+                    </div>
+                    <div class="extra content">
+                        R$ {{anuncio.preco}}
                     </div>
                 </div>
-                <div class="extra content">
-                    R$ {{anuncio.preco}}
-                </div>
-            </div>
+            </a>
         </div>
     </div>
     {% empty %}
-        <div class="ui hidden divider"></div>
-        <h3>Nenhum anúncio encontrado!</h3>
+    <div class="ui hidden divider"></div>
+    <h3>Nenhum anúncio encontrado!</h3>
     {% endfor %}
 </div>
 
