@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    position: relative;
+}
+
+.card{
+    animation: moveCard 0.7s;
+}
+
+.image :hover{
+    opacity: 0.8;
+}
+
+.menu-horizontal i{
+    right: 10px;
+    font-size: 2rem;
+    color: aqua;
+}
+
+@keyframes moveCard {
+    0%{
+        transform: translateY(10rem) rotateY(-30deg);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0) rotateY(0);
+        opacity: 1;
+    }
+}

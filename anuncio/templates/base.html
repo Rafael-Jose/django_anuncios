@@ -11,33 +11,36 @@
     <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.7/dist/semantic.min.js"></script>
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'anuncio/css/estilo.css' %}">
 </head>
 
 
 <body>
 
-
-<div class="ui attached menu">
-    <div class="ui container">
-        <a href="{% url 'home' %}" class="item">
-            <div>
-                <i class="fab fa-python"></i>
-            </div>
-            Django Anúncios
-        </a>
-        <div class="right menu">
-            <div class="ui menu">
-                <div class="ui category search item">
-                    <div class="ui transparent icon input">
-                        <input class="prompt" type="text" placeholder="Pesquisar...">
-                        <i class="search link icon"></i>
+<div class="menu-horizontal">
+    <div class="ui attached inverted menu">
+        <div class="ui container">
+            <a href="{% url 'home' %}" class="item">
+                <div>
+                    <i class="fab fa-python"></i>
+                </div>
+                Django Anúncios
+            </a>
+            <div class="right menu">
+                <div class="ui menu">
+                    <div class="ui category search item">
+                        <div class="ui transparent icon input">
+                            <input class="prompt" type="text" placeholder="Pesquisar...">
+                            <i class="search link icon"></i>
+                        </div>
+                        <div class="results"></div>
                     </div>
-                    <div class="results"></div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 
 <div class="ui hidden divider"></div>
 
@@ -54,7 +57,7 @@
         </div>
         <div class="twelve wide column">
             {% if categoria %}
-                <h1>{{categoria}}</h1>
+            <h1>{{categoria}}</h1>
             {% endif %}
 
             {% block conteudo %}

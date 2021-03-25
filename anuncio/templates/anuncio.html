@@ -7,22 +7,20 @@
 
 <div class="ui one column stackable grid">
     <div class="column">
-        <div class="card">
-            <div class="ui fluid card">
-                <div class="image">
-                    <img src="{% static 'anuncio/img/vazio.jpg' %}">
+        <div class="ui fluid card">
+            <div class="image">
+                <img src="{% static 'anuncio/img/vazio.jpg' %}">
+            </div>
+            <div class="content">
+                <div class="meta">
+                    <span class="date"><h4>Anunciado em: {{anuncio.postado_em}}</h4></span>
                 </div>
-                <div class="content">
-                    <div class="meta">
-                        <span class="date"><h4>Anunciado em: {{anuncio.postado_em}}</h4></span>
-                    </div>
-                </div>
-                <div class="extra content">
-                    <h3>{{anuncio.descricao}}</h3>
-                </div>
-                <div class="extra content">
-                    R$ {{anuncio.preco}}
-                </div>
+            </div>
+            <div class="extra content">
+                <h3>{{anuncio.descricao}}</h3>
+            </div>
+            <div class="extra content">
+                R$ {{anuncio.preco}}
             </div>
         </div>
     </div>
