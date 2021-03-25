@@ -9,6 +9,10 @@ class Categoria(models.Model):
         return self.titulo
 
 
+    class Meta:
+        ordering = ['titulo']
+
+
 class Anuncio(models.Model):
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
     titulo = models.CharField(max_length=40)
@@ -20,3 +24,7 @@ class Anuncio(models.Model):
 
     def __str__(self):
         return self.titulo
+
+
+    class Meta:
+        ordering = ['-id']

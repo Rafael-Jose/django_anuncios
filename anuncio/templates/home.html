@@ -1,16 +1,29 @@
-<!DOCTYPE HTML>
-<html>
+{% extends 'base.html' %}
+{% load static %}
 
-<head>
-    <title>Django Anúncios</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-</head>
+{% block conteudo %}
 
+<div class="ui three column stackable grid">
+    {% for anuncio in anuncios %}
+    <div class="column">
+        <div class="card">
+            <div class="ui fluid card">
+                <div class="image">
+                    <img src="{% static 'anuncio/img/vazio.jpg' %}">
+                </div>
+                <div class="content">
+                    <a class="header">{{anuncio.titulo}}</a>
+                    <div class="meta">
+                        <span class="date">{{anuncio.postado_em}}</span>
+                    </div>
+                </div>
+                <div class="extra content">
+                    R$ {{anuncio.preco}}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 
-<body>
-    <h1>
-        Olá Mundo!
-    </h1>
-</body>
-
-</html>
+{% endblock %}

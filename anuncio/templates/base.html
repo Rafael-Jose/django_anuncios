@@ -1,0 +1,66 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <title>Django Anúncios</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.7/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.7/dist/semantic.min.js"></script>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<div class="ui attached menu">
+    <div class="ui container">
+        <a class="item">
+            <div>
+                <i class="fab fa-python"></i>
+            </div>
+            Django Anúncios
+        </a>
+        <div class="right menu">
+            <div class="ui menu">
+                <div class="ui category search item">
+                    <div class="ui transparent icon input">
+                        <input class="prompt" type="text" placeholder="Pesquisar...">
+                        <i class="search link icon"></i>
+                    </div>
+                    <div class="results"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="ui hidden divider"></div>
+
+<div class="ui container">
+    <div class="ui stackable grid">
+        <div class="four wide column">
+            <div class="ui vertical fluid menu">
+                {% for categoria in categorias %}
+                <a class="item">
+                    {{ categoria }}
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="twelve wide column">
+            {% block conteudo %}
+            {% endblock %}
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+</html>
