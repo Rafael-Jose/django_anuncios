@@ -20,6 +20,39 @@
     color: aqua;
 }
 
+.hamburguer{
+    width: 3rem;
+    height: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
+
+.line {
+    width: 100%;
+    height: .1rem;
+    box-shadow: 0.1rem 0.1rem 1px black;
+}
+
+.corpo{
+    top: 2rem;
+}
+
+.menu-lateral{
+    top: 2rem;
+}
+
+.menu-vertical{
+    left: 0;
+    transition: all 0.4s;
+}
+
+.menu-vertical.show-menu{
+    left: -50rem;
+}
+
+
 @keyframes moveCard {
     0%{
         transform: translateY(10rem) rotateY(-30deg);

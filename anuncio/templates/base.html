@@ -9,11 +9,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.7/dist/semantic.min.css">
     <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.7/dist/semantic.min.js"></script>
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'anuncio/img/favicon-16x16.png' %}">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="{% static 'anuncio/css/estilo.css' %}">
+    <link rel="stylesheet" href="{% static 'anuncio/css/style.css' %}">
 </head>
-
 
 <body>
 
@@ -41,32 +41,52 @@
     </div>
 </div>
 
+<div class="corpo">
+    <div class="ui container">
+        <div class="ui stackable grid">
+            <div class="four wide column">
+                <div class="menu-lateral">
+                    <div class="ui grid">
+                        <div class="ui container">
+                            <div class="three wide column">
+                                <div class="hamburguer">
+                                    <div class="line" id="line1"></div>
+                                    <div class="line" id="line2"></div>
+                                    <div class="line" id="line3"></div>
+                                </div>
+                            </div>
+                            <div class="thirteen wide column">
+                                <div class="column">
+                                    <div class="menu-vertical">
+                                        <div class="ui vertical fluid menu">
+                                            {% for categoria in categorias %}
+                                            <a href="{% url 'categoria' categoria.id %}" class="item">
+                                                {{ categoria }}
+                                            </a>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<div class="ui hidden divider"></div>
-
-<div class="ui container">
-    <div class="ui stackable grid">
-        <div class="four wide column">
-            <div class="ui vertical fluid menu">
-                {% for categoria in categorias %}
-                <a href="{% url 'categoria' categoria.id %}" class="item">
-                    {{ categoria }}
-                </a>
-                {% endfor %}
             </div>
-        </div>
-        <div class="twelve wide column">
-            {% if categoria %}
-            <h1>{{categoria}}</h1>
-            {% endif %}
+            <div class="twelve wide column">
+                {% if categoria %}
+                <h1>{{categoria}}</h1>
+                {% endif %}
 
-            {% block conteudo %}
-            {% endblock %}
+                {% block conteudo %}
+                {% endblock %}
+            </div>
         </div>
     </div>
 </div>
 
-
 </body>
+
+<script src="{% static 'anuncio/script/scripts.js' %}"></script>
 
 </html>
