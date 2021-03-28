@@ -42,4 +42,4 @@ def resultado(request):
                'anuncios': anuncios,
                'categorias': categorias
                }
-    return render(request, 'resultado.html', context)
+    return render(request, 'home.html', context)

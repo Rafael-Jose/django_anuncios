@@ -12,23 +12,28 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'anuncio/img/favicon-16x16.png' %}">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="{% static 'anuncio/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'anuncio/css/estilo.css' %}">
 </head>
 
 <body>
 
-<div class="ui attached menu">
-    <a href="{% url 'home' %}" class="item">Django Anúncios</a>
-    <div class="right menu">
-        <div class="ui right aligned category search item">
-            <form class="ui form" action="{% url 'resultado' %}" method="get">
-                <div class="inline fields">
-                    <input id="resultado" name="resultado" class="prompt" type="text" placeholder="Pesquisar...">
-                    <button class="ui icon button">
-                        <i class="search link icon"></i>
-                    </button>
+<div class="menu-horizontal">
+    <div class="ui attached inverted menu">
+        <div class="ui container">
+            <a href="{% url 'home' %}" class="item"><i class="fab fa-python"></i>Django Anúncios</a>
+            <div class="right menu">
+                <div class="ui right aligned category search item">
+                    <form class="ui form" action="{% url 'resultado' %}" method="get">
+                        <div class="inline fields">
+                            <input id="resultado" name="resultado" class="prompt" type="text"
+                                   placeholder="Pesquisar...">
+                            <button class="ui icon button">
+                                <i class="search link icon"></i>
+                            </button>
+                        </div>
+                    </form>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
 </div>

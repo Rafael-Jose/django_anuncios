@@ -14,10 +14,14 @@
     opacity: 0.8;
 }
 
+.menu-horizontal{
+    font-size: 1rem;
+}
+
 .menu-horizontal i{
-    right: 10px;
-    font-size: 2rem;
     color: aqua;
+    right: 8px;
+    font-size: 2rem;
 }
 
 .hamburguer{
@@ -36,11 +40,7 @@
 }
 
 .corpo{
-    top: 2rem;
-}
-
-.menu-lateral{
-    top: 2rem;
+    top: 4rem;
 }
 
 .menu-vertical{
