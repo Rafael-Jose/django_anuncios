@@ -17,26 +17,18 @@
 
 <body>
 
-<div class="menu-horizontal">
-    <div class="ui attached inverted menu">
-        <div class="ui container">
-            <a href="{% url 'home' %}" class="item">
-                <div>
-                    <i class="fab fa-python"></i>
+<div class="ui attached menu">
+    <a href="{% url 'home' %}" class="item">Django Anúncios</a>
+    <div class="right menu">
+        <div class="ui right aligned category search item">
+            <form class="ui form" action="{% url 'resultado' %}" method="get">
+                <div class="inline fields">
+                    <input id="resultado" name="resultado" class="prompt" type="text" placeholder="Pesquisar...">
+                    <button class="ui icon button">
+                        <i class="search link icon"></i>
+                    </button>
                 </div>
-                Django Anúncios
-            </a>
-            <div class="right menu">
-                <div class="ui menu">
-                    <div class="ui category search item">
-                        <div class="ui transparent icon input">
-                            <input class="prompt" type="text" placeholder="Pesquisar...">
-                            <i class="search link icon"></i>
-                        </div>
-                        <div class="results"></div>
-                    </div>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
 </div>

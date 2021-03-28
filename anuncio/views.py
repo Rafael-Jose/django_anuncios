@@ -32,3 +32,14 @@ def anuncio(request, anuncio_id):
 
     return render(request, 'anuncio.html', {'categorias': categorias,
                                          'anuncio': anuncio},)
+
+
+def resultado(request):
+    valor_digitado = request.GET.get('resultado', 'This is a default value')
+    anuncios = Anuncio.objects.filter(titulo=valor_digitado)
+    categorias = Categoria.objects.all()
+    context = {'valor_digitado': valor_digitado,
+               'anuncios': anuncios,
+               'categorias': categorias
+               }
+    return render(request, 'resultado.html', context)
